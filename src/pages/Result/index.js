@@ -82,45 +82,27 @@ class Result extends Component {
                 onClick={this.handleOnClick}
                 />
                 <main className='container'>
-                <User
-                src={user.avatar_url}
-                alt={user.name}
-                name={user.name}
-                bio={user.bio}
-                organization={user.company}
-                location={user.location}
-                star={user.stargazers_count}
-                repositorie={user.public_repos}
-                followers={user.followers}
-                 />
-                 <div>
-                    <Repo
-                    repos = {repos} />
-                </div>
+                    <User
+                    src={user.avatar_url}
+                    alt={user.name}
+                    name={user.name}
+                    bio={user.bio}
+                    organization={user.company}
+                    location={user.location}
+                    star={user.stargazers_count}
+                    repositorie={user.public_repos}
+                    followers={user.followers}
+                    />
+                    <div>
+                        <Repo
+                            repos = {repos}
+                        />
+                    </div>
+                    <div className='notfound'>
+                        <Content>User not found :(</Content>
+                    </div>
                 </main>
-                <Content>User not found </Content>
             </div>
-        
-
-    //     // return(
-    //     //     <div className='result'>
-    //     //         <Nav
-    //     //         classNav='nav'
-    //     //         classLogo='logo-result'
-    //     //         classLogoItalic='logo-italic'
-    //     //         classSearch='search'
-    //     //         classInput='input'
-    //     //         type='text'
-    //     //         onChange={this.handleOnChange}
-    //     //         classButton='button'
-    //     //         onClick={this.handleOnClickgetRepo}
-    //     //         />
-    //     //         <div className='notfound'>
-    //             <Content>User not found :(</Content>
-    //             </div>
-    //         </div>
-    //     )
-  
         )
     }
 }

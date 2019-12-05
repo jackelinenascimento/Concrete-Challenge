@@ -13,7 +13,6 @@ import './styles.css'
 
 
 const User = props => {
-    console.log(props,'tela user')
     return (
         <div className='user'>
             <Image classImage='image' src={props.src} alt={props.alt}/>
