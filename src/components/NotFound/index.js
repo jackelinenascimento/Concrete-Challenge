@@ -1,10 +1,8 @@
 import React from 'react'
 
-import './notfound.css'
-
-const NotFound = () => {
+const NotFound = (props) => {
     return (
-        <div className='notfound'>
+        <div className={props.classnotfound}>
             <span>User not found :(</span>
         </div>
     )

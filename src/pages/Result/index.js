@@ -89,7 +89,7 @@ class Result extends Component {
                 onClick={this.handleOnClick}
                 />
                 <main className='container'>
-                {error == '' ?
+                {!error ?
                     <Fragment>
                         <User
                         src={user.avatar_url}
@@ -109,7 +109,7 @@ class Result extends Component {
                         </div>
                     </Fragment>
                 :
-                 <NotFound />
+                 <NotFound classnotfound='notfound'/>
                 }
                 </main>
             </div>

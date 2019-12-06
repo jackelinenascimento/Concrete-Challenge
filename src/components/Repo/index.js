@@ -11,7 +11,7 @@ const Repo = props => {
   const { repos } = props
 
   return (
-    repos.map(repo => (
+    repos.sort(function decreasing(a,b){return b.stargazers_count - a.stargazers_count}).map(repo => (
     <div key= {repo.id} className='repo'>
         <Content classContent='repo-name'>{repo.name}</Content>
         <Content classContent='repo-description'>{repo.description}</Content>
