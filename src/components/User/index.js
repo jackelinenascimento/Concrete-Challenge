@@ -26,7 +26,7 @@ const User = props => {
             src={locationnicon}>{props.location}</Icon>
             <Icon
             classIcon='icons'
-            src={staricon}>{props.star}</Icon>
+            src={staricon}>{props.following}</Icon>
             <Icon
             classIcon='icons'
             src={repositoriesicon}>{props.repositorie}</Icon>

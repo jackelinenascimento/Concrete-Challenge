@@ -98,7 +98,7 @@ class Result extends Component {
                         bio={user.bio}
                         organization={user.company}
                         location={user.location}
-                        star={user.stargazers_count}
+                        following={user.following}
                         repositorie={user.public_repos}
                         followers={user.followers}
                         />
