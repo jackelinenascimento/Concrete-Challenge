@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import Nav from '../../components/Nav'
 import User from '../../components/User'
 import NotFound from '../../components/NotFound'
@@ -89,24 +89,28 @@ class Result extends Component {
                 onClick={this.handleOnClick}
                 />
                 <main className='container'>
-       
-                    <User
-                    src={user.avatar_url}
-                    alt={user.name}
-                    name={user.name}
-                    bio={user.bio}
-                    organization={user.company}
-                    location={user.location}
-                    star={user.stargazers_count}
-                    repositorie={user.public_repos}
-                    followers={user.followers}
-                    />
-                    <div>
-                        <Repo
-                            repos = {repos}
+                {error == '' ?
+                    <Fragment>
+                        <User
+                        src={user.avatar_url}
+                        alt={user.name}
+                        name={user.name}
+                        bio={user.bio}
+                        organization={user.company}
+                        location={user.location}
+                        star={user.stargazers_count}
+                        repositorie={user.public_repos}
+                        followers={user.followers}
                         />
-                    </div>
+                        <div>
+                            <Repo
+                                repos = {repos}
+                            />
+                        </div>
+                    </Fragment>
+                :
                  <NotFound />
+                }
                 </main>
             </div>
         )
