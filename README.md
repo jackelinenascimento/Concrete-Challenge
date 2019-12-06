@@ -22,5 +22,5 @@ A client-side application that consults a GitHub API and the following repositor
 - I, as a user, want to see the listing of this user's repositories that was sought, ordered by the decreasing number of stars 
 
 
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+### Preview
+![concrete-demo](./src/videos/ConcreteChallenge.mp4)
