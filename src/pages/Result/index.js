@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Nav from '../../components/Nav'
 import User from '../../components/User'
-import Content from '../../components/Content'
+import NotFound from '../../components/NotFound'
 import Repo from '../../components/Repo'
 import { getUser , getRepos } from '../../service/api/user'
 
@@ -43,8 +43,14 @@ class Result extends Component {
         getUser(value)
         .then(response => {
             this.setState({
-                user: response.data
+                user: response.data,
+                error:''
             })   
+        })
+        .catch((err) => {
+            this.setState({
+                error: 'Not found'
+            })
         })
     }
 
@@ -54,6 +60,8 @@ class Result extends Component {
                 repos: response.data
             })
         })
+        .catch((err) => {
+        })
     }
 
     handleOnClick = (value) =>{
@@ -61,11 +69,10 @@ class Result extends Component {
         this.getReposData(this.state.value);
     }
 
-
-
     render() {
         const user = this.state.user
         const repos = this.state.repos
+        const error = this.state.error
 
         return (
             <div>
@@ -82,6 +89,7 @@ class Result extends Component {
                 onClick={this.handleOnClick}
                 />
                 <main className='container'>
+       
                     <User
                     src={user.avatar_url}
                     alt={user.name}
@@ -98,9 +106,7 @@ class Result extends Component {
                             repos = {repos}
                         />
                     </div>
-                    <div className='notfound'>
-                        <Content>User not found :(</Content>
-                    </div>
+                 <NotFound />
                 </main>
             </div>
         )

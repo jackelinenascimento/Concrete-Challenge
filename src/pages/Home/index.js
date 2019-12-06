@@ -24,6 +24,7 @@ class Home extends Component {
         .then((resp) => {
         this.setState({
             user: resp.data,
+            error:''
             })
             this.props.history.push({
                 pathname: '/result', 
